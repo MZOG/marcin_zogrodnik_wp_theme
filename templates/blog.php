@@ -3,7 +3,7 @@
 <?php
 $blog = new WP_Query( array(
   'category_name' => 'blog',
-  'posts_per_page' => 15,
+  'posts_per_page' => 50,
 ));
 ?>
 
@@ -17,20 +17,22 @@ $blog = new WP_Query( array(
   <?php if ( $blog->have_posts() ) : ?>
     <?php while ( $blog->have_posts() ) : $blog->the_post();?>
     <article class="blog-articles-item">
-      <div class="blog-articles-item__left">
-        <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <?php 
-          $excerpt = get_the_excerpt();
-          $excerpt = substr( $excerpt , 0, 50); 
-          ?>
-        <p class="excerpt"><?php echo $excerpt; ?>...</p>
-      </div>
-
-      <div class="blog-articles-item__right">
+    <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <div class="blog-articles-item__right">
         <a href="<?php echo get_permalink(); ?>">
           <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
         </a>
       </div>
+      <div class="blog-articles-item__left">
+        
+        <?php 
+          $excerpt = get_the_excerpt();
+          $excerpt = substr( $excerpt , 0, 120); 
+          ?>
+        <p class="excerpt"><?php echo $excerpt; ?>...</p>
+      </div>
+
+      
     </article>
 
     <?php 
