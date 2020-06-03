@@ -1,0 +1,106 @@
+.portfolio-homepage {
+  position: relative;
+  background: $grey;
+  border-bottom: 1px solid $grey2;
+  padding-bottom: 50px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%; 
+    height: 100%;
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-5deg);
+    background:$grey;
+    top: -50px;
+    border-top: 1px solid $grey2;
+
+    @include mq('tablet') {
+      top: -110px;
+    }
+  }
+
+  p {
+    @include size(20px);
+    font-weight: 100;
+  }
+
+  >.container {
+    position: relative;
+  }
+
+  .portfolio-cta {
+    text-align: center;
+    @include mq('tablet') {
+      text-align: left;
+    }
+  }
+
+  .portfolio-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+
+    .portfolio-item {
+      width: 100%;
+      position: relative;
+      margin-bottom: 30px;
+
+      @include mq('tablet') {
+        width: calc(50% - 30px);
+        margin-bottom: 0;
+      }
+
+      h3 {
+        margin-top: 10px;
+        font-size: 16px;
+
+        @include mq('tablet') {
+          margin-top: 20px;
+          font-size: 22px;
+        }
+      }
+
+      .portfolio-image {
+        a {padding: 0;}
+        img {
+          border-radius: 10px;
+          display: block;
+          max-width: 100%;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+      }
+
+      &:nth-child(even) {
+        .portfolio-image {
+          
+          @include mq('tablet') {
+            margin-top: 80px;
+          }
+
+          &::before {
+            @include mq('desktop') {
+              display: block;
+              content: "";
+              background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+              height: 318px;
+              right: 0;
+              pointer-events: none;
+              position: absolute;
+              top: 0;
+              transform: rotate(90deg) translate(0px,-80px);
+              width: 318px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

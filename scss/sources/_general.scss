@@ -1,0 +1,471 @@
+body {
+    font-family: $ibm;
+    font-size: 62.5%;
+    @include size(16px);
+    color: $black;
+    margin-top: 65px;
+
+    @include mq('tablet') {
+        margin-top: 80px;
+    }
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+
+    @include mq('desktop') {
+        width: 1060px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include mq('tablet') {
+            flex-direction: row;
+        }
+    }
+
+    &-center {
+        align-items: center;
+    }
+}
+
+section {
+    display: block;
+}
+
+// font noe
+.noe {
+    font-family: $noe;
+    line-height: 1em;
+    letter-spacing: -1px;
+
+    @include mq('tablet') {
+        letter-spacing: inherit;
+        letter-spacing: 0;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    background: $purple;
+    color: $white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid $purple;
+    @include transition(all .2s ease-in-out);
+    display: inline-block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 4px 4px -1px rgba(0, 0, 0, 0.01);
+
+    &:hover {
+        background: darken($purple, 5%);
+        color: $white;
+    }
+}
+
+h1 {
+    position: relative;
+    width: 100%;
+    @include size(30px);
+    @include transition(all 0.1s ease-in-out);
+
+    @include mq('tablet') {
+        @include size(35px);
+    }
+
+    @include mq('desktop') {
+        &::before {
+            display: block;
+            content: "";
+            background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+            position: absolute;
+            height: 287px;
+            right: -90px;
+            pointer-events: none;
+            position: absolute;
+            top: 10px;
+            width: 310px;
+            transform: rotate(90deg);
+        }
+    }
+
+    @include mq('desktop') {
+        @include size(45px);
+        text-align: center;
+    }
+}
+
+h2 {
+    @include size(30px);
+    color: $black;
+    padding-bottom: .7rem;
+
+    @include mq('tablet') {
+        @include size(35px);
+    }
+
+    @include mq('desktop') {
+        @include size(42px);
+    }
+}
+
+.portfolio,
+.process,
+.offer,
+.testimonials,
+.standing,
+.articles {
+    p {
+        &:first-of-type {
+            @include size(20px);
+            font-weight: 200;
+        }
+    }
+}
+
+.terms_conditions {
+
+    li {
+        margin-bottom: 50px;
+
+        ol {
+            margin-top: 20px;
+            margin-left: 20px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.page-404 {
+    p {
+        @include mq('desktop') {
+            text-align: center;
+        }
+    }
+
+    &-cta {
+        margin: 30px 0;
+
+        @include mq('desktop') {
+            text-align: center;
+        }
+    }
+}
+
+.visit-website {
+    text-align: center !important;
+
+    .btn {
+        color: $white;
+    }
+}
+
+.wp-block-image figcaption {
+    color: rgba($black, 0.4);
+    text-align: center !important;
+}
+
+.quick-contact {
+    padding: 20px;
+    border: 1px solid rgba($black, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    @include mq('tablet') {
+        width: 70%;
+        margin: 30px auto 40px auto;
+    }
+
+    .quick-cta {
+        @include mq('tablet') {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            background: $purple;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid $purple;
+            @include transition(all .2s ease-in-out);
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 4px 4px -1px rgba(0, 0, 0, 0.01);
+
+            &:hover {
+                background: darken($purple, 5%);
+                color: $white;
+            }
+        }
+    }
+
+    h2 {
+        letter-spacing: -1px;
+        @include mq('tablet') {
+            text-align: center;
+        }
+
+        span {
+            font-family: $noe;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mq('tablet') {
+        flex-direction: row;
+        margin-top: 40px;
+    }
+
+    .split-left,
+    .split-right {
+        @include mq('tablet') {
+            width: calc(50% - 60px);
+        }
+
+        .page-item {
+            margin-bottom: 20px;
+
+            @include mq('tablet') {
+                margin-bottom: 40px;
+            }
+        }
+
+        .wp-block-image {
+            img {
+                max-width: 100px;
+                height: 100%;
+            }
+        }
+
+        h2 {
+            line-height: 1;
+            @include size(22px);
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            padding: 0;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            line-height: 1;
+            @include size(20px);
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.5px;
+        }
+    }
+}
+
+.contact-form {
+
+    label {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        min-height: 30px;
+        font-family: inherit;
+        margin-top: 10px;
+        display: block;
+        text-indent: 10px;
+        color: $black;
+
+        &[type="submit"] {
+            text-decoration: none;
+            background: $purple;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid $purple;
+            @include transition(all .2s ease-in-out);
+            display: inline-block;
+            max-width: 140px;
+            text-indent: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 4px 4px -1px rgba(0, 0, 0, 0.01);
+
+            &:hover {
+                background: darken($purple, 5%);
+                color: $white;
+            }
+        }
+    }
+
+    textarea {
+        margin-top: 10px;
+        padding: 10px;
+        width: 100%;
+        height: 120px;
+        resize: none;
+        border: 1px solid #cccccc;
+        color: $black;
+    }
+}
+
+.grecaptcha-badge {
+    display: none !important;
+}
+
+.quote-choice { 
+    .wpcf7-checkbox {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center; 
+  
+    label {
+        display: inline-flex;
+        cursor: pointer;
+        position: relative;
+    }
+  
+    label {
+      display: flex;
+      align-items: center;
+    }
+    
+    label > span {
+        color: #34495E;
+    }
+    
+    label > input {
+        min-height: 30px !important;
+        min-width: 30px !important;
+        width: 30px;
+        margin: 0 20px 0 0!important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border-radius: 100px;
+        outline: none;
+        transition-duration: 0.3s;
+        background-color: #fff;
+        cursor: pointer;
+        order: 1px solid $black;
+      }
+    
+    label > input:checked {
+        border: 1px solid $purple;
+        background-color: $purple;
+    }
+    
+    // label > input:checked + span::before {
+    //     content: '\2713';
+    //     display: block;
+    //     text-align: center;
+    //     color: #41B883;
+    //     position: absolute;
+    //     left: 0.7rem;
+    //     top: 0.2rem;
+    // }
+    
+    label > input:active {
+        border: 2px solid $purple; 
+    }
+  
+    // My name is Marcin and I would like to apply for the Frontend Developer role. I have 3 years of commercial experience working across the UK. I am not an expert in any big frameworks such as Angular or React, however I do have two certificates
+  
+      .wpcf7-list-item {
+        width: 100%;
+        margin: 0 0 20px 0;
+  
+        @include mq('tablet') {
+          width: calc(33% - 10px);
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+.project_estimate {
+    .form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        .form-left, .form-right {
+            width: calc(50% - 20px);
+
+            label {
+                display: block;
+            }
+
+            input {
+                width: 100%;
+                margin-top: 10px;
+                border: 1px solid rgba(#2a3554, 0.5);
+                min-height: 40px;
+                padding: 0 0 0 10px;
+                transition: all .2s ease-in-out;
+
+                &:focus {
+                    box-shadow: rgba(39, 79, 117, 0.2) 0px 10px 20px -10px;
+                }
+            }
+        }
+
+        .form-full, .form-submit {
+            width: 100%;
+        }
+
+        .form-subtmit {
+            margin: 30px 0;
+        }
+
+        .form-full {
+            margin-top: 20px;
+            textarea {
+                width: 100%;
+                border: 1px solid rgba(#2a3554, 0.5);
+                padding: 10px;
+                transition: all .2s ease-in-out;
+                margin-top: 10px;
+
+                &:focus {
+                    box-shadow: rgba(39, 79, 117, 0.2) 0px 10px 20px -10px;
+                }
+            }
+
+            label {
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+}

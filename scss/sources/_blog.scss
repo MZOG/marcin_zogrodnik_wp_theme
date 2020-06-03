@@ -1,0 +1,166 @@
+.blog {
+    h2 {
+        @include size(20px);
+        font-weight: 500;
+
+        a {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+
+    &-articles {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        @include mq('tablet') {
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        &-sponsored {
+            background: rgba($purple, 0.8);
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 20px;
+
+            h2 {
+                color: $white;
+                text-align: center;
+                width: 100%;
+            }
+
+            p {
+                color: $white;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            &__cta {
+                text-align: center;
+
+                .btn {
+                    display: inline-block;
+                    border-color: $white;
+                    background: $white;
+                    color: $purple;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $purple;
+                        color: $white;
+                        border-color: $white;
+                    }
+                }
+            }
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            @include transition(all .2s ease-in-out);
+            position: relative;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            flex-direction: column-reverse;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50%;
+                height: 1px;
+                background: rgba($purple, 0.2);
+            }
+
+            @include mq('tablet') {
+                flex-direction: row;
+                width: calc(50% - 20px);
+                padding: 20px;
+                border: 1px solid rgba($black, 0.1);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:nth-child(1) {
+                width: 100%;
+                margin: 0 auto 40px auto;
+
+                @include mq('tablet') {
+                    width: 70%;
+                }
+            }
+
+            &:hover {
+                @include mq('tablet') {
+                    transform: translateY(-.39375rem);
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+                }
+
+                .blog-articles-item__left-more {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &__left {
+                width: 100%;
+                position: relative;
+
+                @include mq('tablet') {
+                    width: calc(50% - 20px);
+                    height: 100%;
+                }
+
+                .excerpt {
+                    display: none;
+
+                    @include mq('tablet') {
+                        display: block;
+                    }
+                }
+
+                h2 {
+                    margin-top: 0.7rem;
+                }
+
+                p {
+                    font-weight: 400 !important;
+                    @include size(16px);
+                    margin-bottom: 0 !important;
+                }
+
+                &-more {
+                    margin-top: 0.9rem;
+
+                    .read-more {
+                        display: inline-block;
+                        color: $purple;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            &__right {
+                width: 100%;
+                position: relative;
+
+                @include mq('tablet') {
+                    width: calc(50% - 20px);
+                }
+
+                img {
+                    max-width: 100%;
+                    border-radius: 10px; 
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+footer {
+    border-top: 1px solid rgba($black, 0.1);
+    padding: 20px 0;
+
+    p {
+        @include size(14px);
+        margin-bottom: 0 !important;
+
+        &.copyright {
+            margin-left: 20px;
+            color: rgba($purple, 0.5);
+
+            @include mq('tablet') {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .general-info {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include mq('tablet') {
+            flex-direction: row;
+        }
+    }
+
+    .footer-phone {
+        a {
+            margin-bottom: 10px;
+            position: relative;
+            margin-left: 25px;
+            color: $purple;
+            text-decoration: none;
+            display: block; 
+
+            @include mq('tablet') {
+                display: inline-block;
+            }
+
+            &:hover {
+                border-bottom: 1px solid $purple;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 15px;
+                height: 15px;
+                background-image: url('img/svg/phone.svg');
+                background-size: 100%;
+            }
+        }
+    }
+
+    .footer-email {
+        @include mq('tablet') {
+            margin-left: 20px;
+        }
+        a {
+            position: relative;
+            margin-left: 25px;
+            color: $purple;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom: 1px solid $purple;
+            }
+            
+            &::before {
+                content: "";
+                position: absolute;
+                left: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 15px;
+                height: 15px;
+                background-image: url('img/svg/envelope.svg');
+                background-size: 100%;
+            }
+        }
+    }
+
+    ul {
+        margin: 10px 0 10px 0;
+        list-style: none;
+        padding: 0;
+
+        @include mq('tablet') {
+            margin: 0;
+        }
+
+        li {
+            display: block;
+            margin-bottom: 10px;
+            @include mq('tablet') {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+
+            a {
+                font-size: 14px;
+                text-decoration: none;
+                color: $purple;
+                margin-left: 25px;
+
+
+                &:hover {
+                    border-bottom: 1px solid $purple;
+                }
+            }
+        }
+    }
+}

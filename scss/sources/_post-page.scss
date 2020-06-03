@@ -1,0 +1,207 @@
+.post {
+  min-height: 500px;
+
+  &__left {
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include mq("tablet") {
+      width: calc(35% - 10px);
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+
+    @include mq("desktop") {
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png");
+        position: absolute;
+        height: 200px;
+        left: -125px;
+        pointer-events: none;
+        position: absolute;
+        top: 108px;
+        width: 200px;
+        transform: rotate(-90deg);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.01);
+
+      @include mq("desktop") {
+        position: absolute;
+        left: -100px;
+        max-width: 450px;
+      }
+    }
+  }
+
+  &__right {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include mq("tablet") {
+      width: calc(65% - 10px);
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    ul {
+      margin: 0 0 1.6rem 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-left: 20px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -15px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 5px;
+          height: 1px;
+          background: $purple;
+        }
+      }
+    }
+  }
+
+  h2 {
+    line-height: 1;
+    @include size(22px);
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    padding: 0;
+    letter-spacing: -0.5px;
+  }
+
+  h3 {
+    line-height: 1;
+    @include size(20px);
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.5px;
+  }
+
+  h4 {
+    line-height: 1;
+    @include size(18px);
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    line-height: 1.4;
+    margin-bottom: 1.6rem;
+  }
+}
+
+blockquote {
+  background: rgba($purple, 0.1);
+  padding: 20px 40px 20px 40px;
+  margin: 0;
+  border-left: 5px solid rgba($purple, 0.3);
+
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.post {
+  a {
+    color: $purple;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 1px solid $purple;
+    }
+  }
+}
+
+.page {
+  p {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.under-post-item {
+  border-top: 1px solid rgba($black, 0.1);
+  margin-bottom: 50px;
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include mq("tablet") {
+    flex-direction: row;
+  }
+
+  .under-item {
+    padding: 15px;
+    border: 1px solid rgba($black, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: $white;
+
+    @include mq("tablet") {
+      width: calc(50% - 20px);
+      padding: 20px;
+    }
+
+    .info {
+      a {
+        margin-bottom: 10px !important;
+        display: inline-block;
+      }
+    }
+
+    &:nth-child(2) {
+      background: $purple;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 20px;
+
+      .info {
+        h3 {
+          color: $white;
+        }
+      }
+
+      .under-cta {
+        margin-top: 15px;
+
+        @include mq("tablet") {
+          margin-top: 0;
+        }
+
+        .btn {
+          background: $white;
+          color: $purple;
+        }
+      }
+
+      p {
+        color: $white;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

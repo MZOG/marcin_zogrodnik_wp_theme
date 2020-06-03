@@ -1,0 +1,82 @@
+.offer {
+    background: $grey;
+    padding: 0 0 50px 0;
+    position: relative;
+    margin-top: 30px;
+
+    @include mq('tablet') {
+        margin-top: 100px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-5deg);
+        background:$grey;
+        top: -50px;
+        border-top: 1px solid $grey2;
+    
+        @include mq('tablet') {
+          top: -110px;
+        }
+      }
+
+    .offer-container {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include mq('phablet') {
+            flex-direction: row;
+        }
+
+        .offer-item {
+            margin-bottom: 30px;
+
+            @include mq('phablet') {
+                width: calc(50% - 10px);
+            }
+
+            @include mq('tablet-wide') {
+                width: calc(33% - 30px);
+            }
+
+            h3,
+            p {
+                margin-top: 10px;
+            }
+
+            p {
+                @include size(16px);
+                font-weight: 400;
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 10px;
+                color: $purple;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            img {
+                max-width: 100px;
+            }
+
+            svg {
+                max-width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+

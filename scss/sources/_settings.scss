@@ -1,0 +1,60 @@
+// variables
+$white: #fff;
+$black: #2a3554;
+$green: #37cfb1;
+$purple: #6165ff;
+$ultramarine: #061387;
+$sundown: #FFB9B0;
+$grey: #f6f7fc;
+$grey2: #eef0fa;
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+$breakpoints: (
+    "phone":        380px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  960px,
+    "desktop":      1100px,
+    "desktop-wide": 1440px,
+    "wide":         1600px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+// px to rem
+@mixin size($size) {
+  font-size: calculateRem($size);
+}
+
+$public: 'Public Sans', sans-serif;
+$ibm: 'ibm', serif;
+$noe: 'Noe-Display', sans-serif;
+

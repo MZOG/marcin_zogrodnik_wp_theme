@@ -1,0 +1,95 @@
+.articles {
+    padding: 50px 0;
+    position: relative;
+    margin-bottom: 40px;
+    
+    @include mq('tablet') {
+        margin-bottom: 100px;
+    }
+  
+    .articles-container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-top: 30px;
+  
+      @include mq('tablet-small') {
+        flex-direction: row;
+      }
+  
+      article {
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        position: relative;
+  
+        @include mq('tablet-small') {
+          width: calc(50% - 20px);
+        }
+  
+        @include mq('tablet') {
+          width: calc(33% - 10px);
+        }
+
+        p {
+            @include size(16px);
+            font-weight: 400;
+        }
+
+        h3 {
+            a {
+                text-decoration: none;
+                color: $black;
+
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+  
+        &:nth-child(3) {
+          &::before {
+            display: none;
+            
+            @include mq('desktop') {
+              display: block;
+              content: "";
+              background-image: url('https://github.blog/wp-content/themes/github-blog/assets/images/dot-left-corner.png');
+              position: absolute;
+              height: 287px;
+              left: 0;
+              pointer-events: none;
+              position: absolute;
+              top: 0;
+              transform: rotate(90deg) translate(-80px, -130px);
+              width: 310px;
+            }
+          }
+        }
+  
+        &:nth-child(3) {
+          display: none;
+  
+          @include mq('tablet') {
+            display: block;
+          }
+        }
+  
+        img {
+          max-width: 100%;
+          display: block;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+  
+        p {
+          margin-top: 10px;
+        }
+  
+        .content {
+          padding: 20px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }

@@ -1,0 +1,85 @@
+.process {
+    padding: 50px 0;
+    position: relative;
+    padding-bottom: 80px;
+
+  .process-timeline {
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mq('tablet-small') {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .timeline-item {
+      padding-left: 50px;
+      position: relative;
+      margin-bottom: 30px;
+
+      @include mq('tablet-small') {
+        width: calc(50% - 20px);
+      }
+
+      @include mq('tablet-wide') {
+        width: calc(25% - 20px)
+      }
+
+      &:nth-child(1) {
+        &::before {
+          content: '1';
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          content: '2';
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          content: '3';
+        }
+      }
+      &:nth-child(4) {
+        &::before {
+          content: '4';
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        color: #fff;
+        padding: 5px 11px;
+        background: $green;
+        border-radius: 50px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      h3 {
+        @include size(22px);
+        margin-bottom: 0.7rem;
+      }
+
+      p {
+        @include size(16px);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .process-cta {
+    @include mq('tablet-small') {
+      margin: 20px 0 0 0;
+    }
+    @include mq('desktop') {
+      margin: 30px 0 0 0;
+    }
+    text-align: center;
+
+  }
+}

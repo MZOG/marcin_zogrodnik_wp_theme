@@ -1,0 +1,57 @@
+.standing {
+    padding: 50px 0;
+  
+    .standing-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  
+      @include mq('phablet') {
+        flex-direction: row;
+      }
+  
+      .item {
+        margin-bottom: 30px;
+        position: relative;
+  
+        @include mq('phablet') {
+          width: calc(33% - 10px);
+        }
+  
+        &:nth-child(3) {
+          &::before {
+            display: none;
+  
+            @include mq('tablet') {
+              display: block;
+              content: "";
+              background-image: url('img/dot-right.png');
+              position: absolute;
+              height: 318px;
+              right: 0;
+              pointer-events: none;
+              position: absolute;
+              top: 0;
+              transform: translate(80px, -100px);
+              width: 318px;
+            }
+          }
+        }
+  
+        h3, p {
+          margin-top: 10px;
+        }
+
+        p {
+            font-weight: 400;
+            @include size(16px);
+        }
+  
+        svg {
+          max-width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
