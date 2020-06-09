@@ -13,23 +13,16 @@
 		});
 
 		// handle nav class
-		var header = $(".header");
-		$(window).scroll(function () {
-			var scroll = $(window).scrollTop();
+		// var header = $(".header");
+		// $(window).scroll(function () {
+		// 	var scroll = $(window).scrollTop();
 
-			if (scroll >= 10) {
-				header.addClass("scroll");
-			} else {
-				header.removeClass("scroll");
-			}
-		});
-
-		// add testimonials to the post if post height is more than 400px
-		var postWrapper = $('.post__right');
-
-		if (postWrapper.height() > 500) {
-			console.log('more than 500');
-		}
+		// 	if (scroll >= 10) {
+		// 		header.addClass("scroll");
+		// 	} else {
+		// 		header.removeClass("scroll");
+		// 	}
+		// });
 
 		$('a[href*="#"]')
 			// Remove links that don't actually link to anything

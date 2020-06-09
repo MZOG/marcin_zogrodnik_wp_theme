@@ -4,37 +4,23 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
+  @include transition(box-shadow .2s ease-in-out);
 
   @include mq('tablet', max) {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
     background: #fff;
   }
 
-  @include transition(box-shadow .2s ease-in-out);
-
-  &.scroll {
-    .sticky-bar {
-      transform: translateY(0%);
-      top: 0;
-    }
-
-    .container {
-      @include mq('desktop') {
-        padding: 15px 0px;
-      }
-    }
-  }
-
   .sticky-bar {
     @include mq('tablet') {
       position: absolute;
       left: 0;
-      top: -10px;
+      // top: -10px;
       width: 100%;
       height: 68px;
       background: $white;
       z-index: -1;
-      transform: translateY(-100%);
+      // transform: translateY(-100%);
       transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
     }

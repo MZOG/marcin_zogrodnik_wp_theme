@@ -502,10 +502,10 @@ $blog = new WP_Query(array(
 						<div class="content">
 							<?php
 									$excerpt = get_the_excerpt();
-									$excerpt = substr($excerpt, 0, 100);
+									$excerpt = substr($excerpt, 0, 105);
 									?>
 							<h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<p><?php echo $excerpt; ?></p>
+							<p><?php echo $excerpt; ?>...</p>
 						</div>
 					</article>
 				<?php endwhile; ?>

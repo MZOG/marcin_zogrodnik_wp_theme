@@ -105,7 +105,7 @@ h1 {
 
     @include mq('desktop') {
         @include size(45px);
-        text-align: center;
+        // text-align: center;
     }
 }
 
@@ -467,5 +467,25 @@ h2 {
                 margin-top: 10px;
             }
         }
+    }
+}
+
+.code-snippets {
+    background: $purple;
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem 0;
+    // font-family: $noe;
+    font-weight: 100;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+
+    &:hover {
+        background: lighten($purple, 6%);
+        border-bottom: 0 !important;
     }
 }
