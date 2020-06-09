@@ -12,7 +12,7 @@ $blog = new WP_Query( array(
 
   <h1 class="noe">Blog</h1>
 
-  <a href="/category/snippets" class="code-snippets">
+  <a href="/category/front-end" class="code-snippets">
     Nowa kategoria - Front End!
   </a>
 

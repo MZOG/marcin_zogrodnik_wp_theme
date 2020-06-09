@@ -5,7 +5,7 @@
 
 				<h1 class="noe post_name"><?php the_title(); ?></h1>
 
-				<a href="/category/snippets" class="code-snippets">
+				<a href="/category/front-end" class="code-snippets">
 				Nowa kategoria - Front End!
 				</a>
 
