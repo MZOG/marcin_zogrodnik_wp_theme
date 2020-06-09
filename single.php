@@ -6,7 +6,7 @@
 				<h1 class="noe post_name"><?php the_title(); ?></h1>
 
 				<a href="/category/snippets" class="code-snippets">
-					Zmiany na stronie! Nowa kategoria "code snippets" dla początkujących programistów. Sprawdź!
+				Nowa kategoria - Front End!
 				</a>
 
 				<div class="post__left">

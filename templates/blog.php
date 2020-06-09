@@ -13,7 +13,7 @@ $blog = new WP_Query( array(
   <h1 class="noe">Blog</h1>
 
   <a href="/category/snippets" class="code-snippets">
-    Zmiany na stronie! Nowa kategoria "code snippets" dla początkujących programistów. Sprawdź!
+    Nowa kategoria - Front End!
   </a>
 
   <div class="blog-articles">
