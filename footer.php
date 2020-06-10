@@ -7,7 +7,7 @@
 							</span>
 
 							<span class="footer-email">
-								<a href="mailto:kontakt@marcinzogrodnik.pl">kontakt@marcinzogrodnik.pl</a>
+								<a href="mailto:kontakt@marcinzogrodnik.pl" rel="me">kontakt@marcinzogrodnik.pl</a>
 							</span>
 						</p>
 						<?php footer_menu(); ?>

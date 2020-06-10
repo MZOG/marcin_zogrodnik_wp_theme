@@ -52,4 +52,12 @@
 
 	});
 
+	$(function(){
+		$.getJSON("https://webmention.io/api/count", {
+		  target: "https://marcinzogrodnik.pl"
+		}, function(data){
+		  console.log(data.count);
+		});
+	  });
+
 })(jQuery, this);
