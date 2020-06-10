@@ -20,6 +20,52 @@
             margin-top: 30px;
         }
 
+        // category page article view
+
+        &.category {
+            width: 100%;
+            .blog-articles-item {
+                width: 100%;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    padding-bottom: 0;
+                    width: auto;
+                    font-weight: 700;
+
+                    &:hover {
+                        border-bottom: 1px solid $black;
+                    }
+                }
+
+                .category-tags {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        display: inline-block;
+
+                        a {
+                            border-bottom: 1px solid $purple;
+                            color: $purple;
+                            text-decoration: none;
+                            font-size: 13px;
+                            padding: 2px 0;
+                            margin-left: 10px;
+
+                            &:hover {
+                                background: rgba($purple, 0.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         &-sponsored {
             background: rgba($purple, 0.8);
             flex-direction: column !important;
@@ -94,18 +140,9 @@
                 width: 100%;
             }
 
-            // &:nth-child(1) {
-            //     width: 100%;
-            //     margin: 0 auto 40px auto;
-
-            //     @include mq('tablet') {
-            //         width: 70%;
-            //     }
-            // }
-
             &:hover {
                 @include mq('tablet') {
-                    transform: translateY(-.39375rem);
+                    transform: translateY(-.2rem);
                     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
                 }
 

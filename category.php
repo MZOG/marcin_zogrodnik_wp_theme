@@ -5,24 +5,12 @@
 
   <h1 class="noe"><?php _e( '', 'html5blank' ); single_cat_title(); ?></h1>
 
-  <div class="blog-articles">
+  <div class="blog-articles category">
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-  <article class="blog-articles-item">
-    <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <div class="blog-articles-item__right">
-        <a href="<?php echo get_permalink(); ?>">
-          <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-        </a>
-      </div>
-      <div class="blog-articles-item__left">
-        
-        <?php 
-          $excerpt = get_the_excerpt();
-          $excerpt = substr( $excerpt , 0, 120); 
-          ?>
-        <p class="excerpt"><?php echo $excerpt; ?>...</p>
-      </div>
+    <article class="blog-articles-item">
+      <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+      <?php the_tags( '<ul class="category-tags"><li>', '</li><li>', '</li></ul>' ); ?>
     </article>
 
 	<?php endwhile; ?>
