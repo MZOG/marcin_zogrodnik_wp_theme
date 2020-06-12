@@ -97,7 +97,7 @@
     @include size(25px);
     letter-spacing: -0.5px;
     font-family: $noe;
-    margin-bottom: 1.6rem;
+    margin: 1.6rem 0;
 
     @include mq('tablet-wide', max) {
       @include size(22px);

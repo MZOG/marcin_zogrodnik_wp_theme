@@ -139,7 +139,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '3.0', 'all');
+    wp_register_style('codeo', get_template_directory_uri() . '/codeo.min.css', array(), '3.1', 'all');
     // .code-snippets = 9.06.2020
     wp_enqueue_style('codeo'); // Enqueue it!
 
