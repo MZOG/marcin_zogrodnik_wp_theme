@@ -18,8 +18,13 @@
 				</div>
 
 				<div class="post__right">
-					<?php the_content(); // Dynamic Content 
-							?>
+					<?php the_content(); // Dynamic Content ?>
+
+					<?php
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+					?>
 				</div>
 
 				<div class="under-post-item">
