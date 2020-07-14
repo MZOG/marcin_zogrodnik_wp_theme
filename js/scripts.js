@@ -1,63 +1,57 @@
 (function ($, root, undefined) {
+  $(function () {
+    "use strict";
 
-	$(function () {
+    // handle nav button
+    var $hamburger = $(".hamburger");
+    var $navigation = $("nav");
+    $hamburger.on("click", function (e) {
+      $hamburger.toggleClass("is-active");
+      $navigation.toggleClass("is-active");
+    });
 
-		'use strict';
+    // handle nav class
+    // var header = $(".header");
+    // $(window).scroll(function () {
+    // 	var scroll = $(window).scrollTop();
 
-		// handle nav button
-		var $hamburger = $(".hamburger");
-		var $navigation = $("nav");
-		$hamburger.on("click", function (e) {
-			$hamburger.toggleClass("is-active");
-			$navigation.toggleClass('is-active');
-		});
+    // 	if (scroll >= 10) {
+    // 		header.addClass("scroll");
+    // 	} else {
+    // 		header.removeClass("scroll");
+    // 	}
+    // });
 
-		// handle nav class
-		// var header = $(".header");
-		// $(window).scroll(function () {
-		// 	var scroll = $(window).scrollTop();
+    $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function (event) {
+        // On-page links
+        if (location.hostname == this.hostname) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length
+            ? target
+            : $("[name=" + this.hash.slice(1) + "]");
 
-		// 	if (scroll >= 10) {
-		// 		header.addClass("scroll");
-		// 	} else {
-		// 		header.removeClass("scroll");
-		// 	}
-		// });
-
-		$('a[href*="#"]')
-			// Remove links that don't actually link to anything
-			.not('[href="#"]')
-			.not('[href="#0"]')
-			.click(function (event) {
-				// On-page links
-				if (location.hostname == this.hostname) {
-					// Figure out element to scroll to
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-					// Does a scroll target exist?
-					if (target.length) {
-						// Only prevent default if animation is actually gonna happen
-						event.preventDefault();
-						$('html, body').animate({
-							scrollTop: target.offset().top - 80
-						}, 1000, function () {
-							// Callback after animation
-							// Must change focus!
-							var $target = $(target);
-						});
-					}
-				}
-			});
-
-	});
-
-	$(function(){
-		$.getJSON("https://webmention.io/api/count", {
-		  target: "https://marcinzogrodnik.pl"
-		}, function(data){
-		  console.log(data.count);
-		});
-	  });
-
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $("html, body").animate(
+              {
+                scrollTop: target.offset().top - 80,
+              },
+              1000,
+              function () {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+              }
+            );
+          }
+        }
+      });
+  });
 })(jQuery, this);

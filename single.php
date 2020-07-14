@@ -5,6 +5,8 @@
 
 				<h1 class="noe post_name"><?php the_title(); ?></h1>
 
+				
+
 				<a href="/category/front-end" class="code-snippets">
 				Nowa kategoria - Front End!
 				</a>
@@ -18,6 +20,11 @@
 				</div>
 
 				<div class="post__right">
+
+					<div class="breadcrumbs">
+						<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+					</div>
+				
 					<?php the_content(); // Dynamic Content ?>
 
 					<?php
